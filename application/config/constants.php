@@ -87,3 +87,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 ////Custom Constants///////
 define('ADMINCP','content_admin'); //Admin folder name
 define('ADMIN_ASSETS','admin_assets'); //Admin assets path
+define('PAGE_IMAGE','admin_assets/page_images'); //Page image path

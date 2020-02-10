@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2020 at 11:10 PM
+-- Generation Time: Feb 09, 2020 at 11:21 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -43,7 +43,7 @@ CREATE TABLE `cbf_admin` (
 --
 
 INSERT INTO `cbf_admin` (`uid`, `uname`, `pass`, `email`, `mobile_no`, `level`, `last_login`, `created_on`, `status`) VALUES
-(1, 'admin', '2f6e05b4f7298f96074ea6116659677bfefee00812a53713f00a75253b894c56', '', '', 'SADMIN', '1579627862', '', 'A');
+(1, 'admin', 'ecd71870d1963316a97e3ac3408c9835ad8cf0f3c1bc703527c30265534f75ae', '', '', 'SADMIN', '1581252162', '', 'A');
 
 -- --------------------------------------------------------
 
@@ -59,17 +59,6 @@ CREATE TABLE `cbf_admin_access_logs` (
   `time` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `cbf_admin_access_logs`
---
-
-INSERT INTO `cbf_admin_access_logs` (`id`, `uid`, `ip`, `user_agent`, `time`) VALUES
-(1, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36', '1579350393'),
-(2, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36', '1579355557'),
-(3, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36', '1579359343'),
-(4, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36', '1579359610'),
-(5, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36', '1579627862');
-
 -- --------------------------------------------------------
 
 --
@@ -79,17 +68,19 @@ INSERT INTO `cbf_admin_access_logs` (`id`, `uid`, `ip`, `user_agent`, `time`) VA
 CREATE TABLE `cbf_page_images` (
   `id` int(11) NOT NULL,
   `page_name` varchar(50) NOT NULL,
-  `image_name` varchar(250) NOT NULL,
-  `image_type` varchar(100) NOT NULL,
-  `updated_on` datetime NOT NULL
+  `image_loc` varchar(25) NOT NULL,
+  `sort_order` tinyint(2) NOT NULL DEFAULT '1',
+  `image_name1` varchar(250) NOT NULL,
+  `image_text1` varchar(255) NOT NULL,
+  `image_media1` varchar(255) NOT NULL,
+  `image_name2` varchar(100) NOT NULL,
+  `image_text2` varchar(255) NOT NULL,
+  `image_media2` varchar(255) NOT NULL,
+  `image_name3` varchar(100) NOT NULL,
+  `image_text3` varchar(255) NOT NULL,
+  `image_media3` varchar(255) NOT NULL,
+  `created_on` int(10) UNSIGNED NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cbf_page_images`
---
-
-INSERT INTO `cbf_page_images` (`id`, `page_name`, `image_name`, `image_type`, `updated_on`) VALUES
-(1, 'home', 'ev.png', 'banner', '2020-01-18 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -146,12 +137,12 @@ ALTER TABLE `cbf_admin`
 -- AUTO_INCREMENT for table `cbf_admin_access_logs`
 --
 ALTER TABLE `cbf_admin_access_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `cbf_page_images`
 --
 ALTER TABLE `cbf_page_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
